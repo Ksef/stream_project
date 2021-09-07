@@ -34,10 +34,10 @@ public class Main {
         orders.add(new Order(2, "ok", LocalDate.of(2021,9,2), LocalDate.of(2021,9,6), products, customers.get(3)));
         orders.add(new Order(3, "ok", LocalDate.of(2021,9,2), LocalDate.of(2021,9,7), products, customers.get(1)));
         orders.add(new Order(4, "ok", LocalDate.of(2021,9,2), LocalDate.of(2021,9,8), products, customers.get(4)));
-        orders.add(new Order(5, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,16), (List<Product>) products.get(4), customers.get(4)));
-        orders.add(new Order(6, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,18), (List<Product>) products.get(4), customers.get(4)));
-        orders.add(new Order(7, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,17), (List<Product>) products.get(4), customers.get(4)));
-        orders.add(new Order(8, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,19), (List<Product>) products.get(4), customers.get(4)));
+        orders.add(new Order(5, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,16), products, customers.get(4)));
+        orders.add(new Order(6, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,18), products, customers.get(4)));
+        orders.add(new Order(7, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,17), products, customers.get(4)));
+        orders.add(new Order(8, "ok", LocalDate.of(2021,3,14), LocalDate.of(2021,3,19), products, customers.get(4)));
 
 //        1. Obtain a list of products belongs to category “Books” with price > 100
         Predicate<Product> more100 = product -> product.getPrice() >= 100;
