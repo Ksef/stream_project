@@ -67,12 +67,18 @@ public class Main {
         System.out.println(collect);
 //        System.out.println(order);
 //        System.out.println(orders);
-////        5. Calculate order average payment placed on 14-Mar-2021 (використайте в процесі mapToDouble)
-//        Order order1 = orders.stream().filter(order -> order.getOrderDate().equals(LocalDate.of(2021,3, 14)))
-//                .mapToDouble(value -> )
-////        6. Get the most expensive product by category (використайте groupingBy)
-////        Product product1 = products.stream();
-////                .collect(products.groupingBy)
+//       5. Calculate order average payment placed on 14-Mar-2021 (використайте в процесі mapToDouble)
+        Double result = orders.stream()
+                .filter(order -> order.getOrderDate().equals(LocalDate.of(2021, 3, 14)))
+                .map(Order::getProducts)
+                .map(products1 -> products1.stream().mapToDouble(Product::getPrice).average().getAsDouble())
+                .reduce(Double::sum).get();
+        System.out.println(result);
+//       6. Get the most expensive product by category (використайте groupingBy)
+//        Map<String, Product> collect2 = products.stream()
+//                .collect(Collectors.groupingBy(Product::getCategory, Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingDouble(Product::getPrice)), Optional::get)));
+//        System.out.println(collect2);
+
 
     }
 }
